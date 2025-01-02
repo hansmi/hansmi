@@ -1,0 +1,75 @@
+#!/usr/bin/python3
+
+import itertools
+import argparse
+import jinja2
+import types
+import sys
+import collections
+import json
+
+
+_IGNORE = frozenset({
+  "fake-dp-dual-mode",
+  "ghactions-go-test-workflow",
+  "ghactions-goreleaser-workflow",
+  "go-mozpref",
+  "wp2reg-language-extractor",
+})
+
+
+def main():
+  parser = argparse.ArgumentParser()
+  parser.add_argument("repos_file", type=str,
+                      help="GitHub REST API response listing repositories in JSON format.")
+
+  args = parser.parse_args()
+
+  with open(args.repos_file, "r") as fh:
+    repos = json.load(fh, object_hook=lambda kwargs: types.SimpleNamespace(**kwargs))
+
+  env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader("templates"),
+  )
+
+  groups = dict(
+    golang=[],
+    monitoring=[],
+    paperless=[],
+    cli=[],
+  )
+  unrecognized = set()
+
+  for repo in repos:
+    repo.topics = frozenset(repo.topics)
+
+    if repo.fork or repo.name in _IGNORE:
+      continue
+
+    group = None
+
+    if repo.name.startswith("paper") or "paperless" in repo.topics:
+      group = "paperless"
+    elif repo.name.startswith("prometheus-") or "prometheus-exporter" in repo.topics or "prometheus" in repo.topics:
+      group = "monitoring"
+    elif "cli" in repo.topics or "syncthing-cli" in repo.topics:
+      group = "cli"
+    elif "golang" in repo.topics:
+      group = "golang"
+
+    if group is None:
+      unrecognized.add(repo.name)
+      continue
+
+    groups[group].append(repo)
+
+  if unrecognized:
+    raise ValueError(f"Repositories not fitting into any group: {sorted(unrecognized)}")
+
+  print(env.get_template("readme.jinja").render(groups=groups))
+
+
+if __name__ == "__main__":
+  main()
+
+# vim: set sw=2 sts=2 et :

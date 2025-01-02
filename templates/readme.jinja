@@ -1,0 +1,40 @@
+{%- macro format_group(name) -%}
+{%- for repo in groups[name] | sort(attribute="name") -%}
+* [`{{ repo.name }}`]({{ repo.html_url }})
+  {%- if repo.description -%}
+    {%- filter wordwrap(break_long_words=False) | indent(2, first=False) -%}
+      {{- ":\n" ~ repo.description.rstrip(".") -}}.
+    {%- endfilter -%}
+  {%- endif -%}
+  {%- if repo.stargazers_count > 1 %}
+  <span>![GitHub star count](https://img.shields.io/github/stars/{{ repo.full_name }})</span>
+  {%- endif %}
+{% endfor -%}
+{%- endmacro -%}
+
+# Overview
+
+## Monitoring
+
+{{ format_group("monitoring") }}
+
+## Paperless-ngx
+
+Tools for working with [Paperless-ngx](https://docs.paperless-ngx.com/).
+
+{{ format_group("paperless") }}
+
+## CLI
+
+[Command line](https://en.wikipedia.org/wiki/Command-line_interface) programs.
+
+{{ format_group("cli") }}
+
+## Go
+
+Libraries and programs written in and/or for the
+[Go programming language](https://go.dev/).
+
+{{ format_group("golang") }}
+
+{#- vim: set sw=2 sts=2 et : -#}
