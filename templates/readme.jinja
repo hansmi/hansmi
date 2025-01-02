@@ -1,18 +1,24 @@
 {%- macro format_group(name) -%}
 {%- for repo in groups[name] | sort(attribute="name") -%}
-* [`{{ repo.name }}`]({{ repo.html_url }})
-  {%- if repo.description -%}
-    {%- filter wordwrap(break_long_words=False) | indent(2, first=False) -%}
-      {{- ":\n" ~ repo.description.rstrip(".") -}}.
-    {%- endfilter -%}
-  {%- endif -%}
-  {%- if repo.stargazers_count > 1 %}
-  <span>![GitHub star count](https://img.shields.io/github/stars/{{ repo.full_name }})</span>
-  {%- endif %}
+{{ "* " -}}
+{%- filter indent(2, first=False) -%}
+{%- if repo.stargazers_count > 0 -%}
+  {%- set stargazers_image_src =
+    "https://img.shields.io/github/stars/" ~ repo.full_name ~ "?" ~
+    "style=flat&logo=github&label=%E2%AD%90"
+  -%}
+  <a href="{{ repo.html_url | escape }}"><img alt="GitHub star count" src="{{ stargazers_image_src | escape }}" align="right" /></a>
+  {{- "\n" -}}
+{%- endif -%}
+[`{{ repo.name }}`]({{ repo.html_url }})
+{%- if repo.description -%}
+  {%- filter wordwrap(break_long_words=False) -%}
+    {{- ":\n" ~ repo.description.rstrip(".") -}}.
+  {%- endfilter -%}
+{%- endif %}
+{%- endfilter %}
 {% endfor -%}
 {%- endmacro -%}
-
-# Overview
 
 ## Monitoring
 
