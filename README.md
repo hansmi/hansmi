@@ -38,7 +38,8 @@ Tools for working with [Paperless-ngx](https://docs.paperless-ngx.com/).
 
 [Command line](https://en.wikipedia.org/wiki/Command-line_interface) programs.
 
-* [`cocoon`](https://github.com/hansmi/cocoon)
+* [`cocoon`](https://github.com/hansmi/cocoon):
+  Run program in a container with preserved local execution environment.
 * [`stsetup`](https://github.com/hansmi/stsetup):
   Configure Syncthing using jq filter.
 
