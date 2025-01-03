@@ -28,7 +28,8 @@ Tools for working with [Paperless-ngx](https://docs.paperless-ngx.com/).
 * <a href="https://github.com/hansmi/paperhooks"><img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/paperhooks?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" /></a>
   [`paperhooks`](https://github.com/hansmi/paperhooks):
   Hook toolkit for Paperless-ngx with a REST API client in written Go.
-* [`paperminer`](https://github.com/hansmi/paperminer)
+* [`paperminer`](https://github.com/hansmi/paperminer):
+  Amend Paperless documents with extracted information.
 * <a href="https://github.com/hansmi/prometheus-paperless-exporter"><img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/prometheus-paperless-exporter?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" /></a>
   [`prometheus-paperless-exporter`](https://github.com/hansmi/prometheus-paperless-exporter):
   Paperless-ngx metrics for Prometheus.
