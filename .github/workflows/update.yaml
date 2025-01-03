@@ -6,9 +6,6 @@ on:
   push:
     branches:
       - main
-  watch:
-    types:
-      - started
 
 permissions:
   contents: write
