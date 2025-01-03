@@ -27,6 +27,8 @@ jobs:
         uses: gautamkrishnar/keepalive-workflow@v2
 
       - name: Update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           make clean &&
           make

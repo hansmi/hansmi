@@ -18,6 +18,7 @@ tmp/.dir:
 tmp/repos.json: | tmp/.dir
 	curl --fail --silent --show-error -o $@ \
 		-H 'Accept: application/vnd.github+json' \
+		$${GITHUB_TOKEN:+-H "Authorization: Bearer $${GITHUB_TOKEN}"} \
 		'https://api.github.com/users/hansmi/repos?type=owner&per_page=100'
 
 README.md: tmp/repos.json generate $(TEMPLATES)
