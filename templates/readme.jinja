@@ -18,27 +18,53 @@
 </dl>
 {%- endmacro -%}
 
+{%- macro columns(count) -%}
+<table>
+<tr>
+
+{% for col in range(count) %}
+<td align="left" valign="top"
+{%- if not loop.last %}
+ width="{{ 100 // count }}%"
+{% endif -%}
+>
+{{ caller(col) }}
+</td>
+{% endfor %}
+
+</tr>
+</table>
+{%- endmacro -%}
+
+{% call(col) columns(count=2) %}
+{%- if col == 0 %}
 ## Monitoring
 
 {{ format_group("monitoring") }}
-
+{%- elif col == 1 %}
 ## Paperless-ngx
 
 Tools for working with [Paperless-ngx](https://docs.paperless-ngx.com/).
 
 {{ format_group("paperless") }}
+{% endif %}
+{% endcall %}
 
+{% call(col) columns(count=2) %}
+{%- if col == 0 %}
 ## CLI
 
 [Command line](https://en.wikipedia.org/wiki/Command-line_interface) programs.
 
 {{ format_group("cli") }}
-
+{%- elif col == 1 %}
 ## Go
 
 Libraries and programs written in and/or for the
 [Go programming language](https://go.dev/).
 
 {{ format_group("golang") }}
+{% endif %}
+{% endcall %}
 
 {#- vim: set sw=2 sts=2 et : -#}
