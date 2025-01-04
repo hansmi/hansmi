@@ -1,23 +1,21 @@
 {%- macro format_group(name) -%}
-{%- for repo in groups[name] | sort(attribute="name") -%}
-{{ "* " -}}
-{%- filter indent(2, first=False) -%}
-{%- if repo.stargazers_count > 0 -%}
+<dl>
+{% for repo in groups[name] | sort(attribute="name") %}
+<dt><a href="{{ repo.html_url | escape }}">
+{{ repo.name | escape }}
+{% if repo.stargazers_count > 0 -%}
   {%- set stargazers_image_src =
     "https://img.shields.io/github/stars/" ~ repo.full_name ~ "?" ~
     "style=flat&logo=github&label=%E2%AD%90"
   -%}
-  <a href="{{ repo.html_url | escape }}"><img alt="GitHub star count" src="{{ stargazers_image_src | escape }}" align="right" /></a>
-  {{- "\n" -}}
-{%- endif -%}
-[`{{ repo.name }}`]({{ repo.html_url }})
-{%- if repo.description -%}
-  {%- filter wordwrap(break_long_words=False) -%}
-    {{- ":\n" ~ repo.description.rstrip(".") -}}.
-  {%- endfilter -%}
+  <img alt="GitHub star count" src="{{ stargazers_image_src | escape }}" align="right" />
+{% endif -%}
+</a></dt>
+{%- if repo.description %}
+<dd>{{ (repo.description.rstrip(".") ~ ".") | wordwrap(break_long_words=False) | escape }}</dd>
 {%- endif %}
-{%- endfilter %}
-{% endfor -%}
+{% endfor %}
+</dl>
 {%- endmacro -%}
 
 ## Monitoring
