@@ -10,6 +10,7 @@ on:
     - cron: "45 4 */7 * *"
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -25,6 +26,8 @@ jobs:
 
       - name: Workflow keep-alive
         uses: gautamkrishnar/keepalive-workflow@v2
+        with:
+          auto_write_check: true
 
       - name: Update
         env:
