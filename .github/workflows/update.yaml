@@ -9,9 +9,7 @@ on:
   schedule:
     - cron: "45 4 */7 * *"
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 concurrency:
   group: ${{ github.head_ref || github.ref }}
@@ -19,12 +17,12 @@ concurrency:
 jobs:
   pull-request:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Workflow keep-alive
-        uses: gautamkrishnar/keepalive-workflow@v2
 
       - name: Update
         env:
@@ -44,5 +42,18 @@ jobs:
           delete-branch: true
           title: Update README file
           body:
+
+  keepalive:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Workflow keep-alive
+        uses: gautamkrishnar/keepalive-workflow@v2
+        with:
+          auto_write_check: true
 
 # vim: set sw=2 sts=2 et :
