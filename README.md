@@ -54,6 +54,7 @@ Tools for working with [Paperless-ngx](https://docs.paperless-ngx.com/).
 
 <dt><a href="https://github.com/hansmi/dossier">
 dossier
+<img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/dossier?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
 </a></dt>
 <dd>Extract textual information from PDF documents.</dd>
 
