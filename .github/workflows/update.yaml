@@ -43,15 +43,4 @@ jobs:
           title: Update README file
           body:
 
-  keepalive:
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Workflow keep-alive
-        uses: gautamkrishnar/keepalive-workflow@v2
-
 # vim: set sw=2 sts=2 et :
