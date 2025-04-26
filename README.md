@@ -10,6 +10,11 @@
 
 <dl>
 
+<dt><a href="https://github.com/hansmi/modbus-exporter-modules">
+modbus-exporter-modules
+</a></dt>
+<dd>Modules for Prometheus Modbus exporter.</dd>
+
 <dt><a href="https://github.com/hansmi/prombackup">
 prombackup
 <img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/prombackup?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
