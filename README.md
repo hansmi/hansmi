@@ -124,6 +124,11 @@ stsetup
 </a></dt>
 <dd>Configure Syncthing using jq filter.</dd>
 
+<dt><a href="https://github.com/hansmi/vault-keepassxc-client">
+vault-keepassxc-client
+</a></dt>
+<dd>Read Ansible Vault passwords from KeePassXC.</dd>
+
 </dl>
 
 </td>
