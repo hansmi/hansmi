@@ -119,6 +119,11 @@ cocoon
 </a></dt>
 <dd>Run program in a container with preserved local execution environment.</dd>
 
+<dt><a href="https://github.com/hansmi/s3-object-cleanup">
+s3-object-cleanup
+</a></dt>
+<dd>Remove non-current object versions from S3 buckets.</dd>
+
 <dt><a href="https://github.com/hansmi/stsetup">
 stsetup
 </a></dt>
