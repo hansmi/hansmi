@@ -131,6 +131,7 @@ stsetup
 
 <dt><a href="https://github.com/hansmi/vault-keepassxc-client">
 vault-keepassxc-client
+<img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/vault-keepassxc-client?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
 </a></dt>
 <dd>Read Ansible Vault passwords from KeePassXC.</dd>
 
