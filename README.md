@@ -38,6 +38,11 @@ prometheus-textformat-merge
 </a></dt>
 <dd>Combine multiple Prometheus textformat inputs into one.</dd>
 
+<dt><a href="https://github.com/hansmi/prompush">
+prompush
+</a></dt>
+<dd>Prometheus pushgateway client tool.</dd>
+
 <dt><a href="https://github.com/hansmi/wp2reg-luxws">
 wp2reg-luxws
 <img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/wp2reg-luxws?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
