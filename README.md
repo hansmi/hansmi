@@ -70,6 +70,7 @@ dossier
 
 <dt><a href="https://github.com/hansmi/papercli">
 papercli
+<img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/papercli?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
 </a></dt>
 <dd>Paperless-ngx command line interface.</dd>
 
@@ -81,6 +82,7 @@ paperhooks
 
 <dt><a href="https://github.com/hansmi/paperminer">
 paperminer
+<img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/paperminer?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
 </a></dt>
 <dd>Amend Paperless documents with extracted information.</dd>
 
