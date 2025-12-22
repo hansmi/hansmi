@@ -136,6 +136,11 @@ stsetup
 </a></dt>
 <dd>Configure Syncthing using jq filter.</dd>
 
+<dt><a href="https://github.com/hansmi/unitshell">
+unitshell
+</a></dt>
+<dd>Run command in the same environment as a systemd service unit.</dd>
+
 <dt><a href="https://github.com/hansmi/vault-keepassxc-client">
 vault-keepassxc-client
 <img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/vault-keepassxc-client?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
