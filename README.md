@@ -23,6 +23,7 @@ prombackup
 
 <dt><a href="https://github.com/hansmi/prometheus-ai-on-the-edge-device-exporter">
 prometheus-ai-on-the-edge-device-exporter
+<img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/prometheus-ai-on-the-edge-device-exporter?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
 </a></dt>
 <dd>Prometheus metrics for AI-on-the-edge devices.</dd>
 
