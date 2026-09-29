@@ -134,6 +134,7 @@ s3-object-cleanup
 
 <dt><a href="https://github.com/hansmi/stsetup">
 stsetup
+<img alt="GitHub star count" src="https://img.shields.io/github/stars/hansmi/stsetup?style=flat&amp;logo=github&amp;label=%E2%AD%90" align="right" />
 </a></dt>
 <dd>Configure Syncthing using jq filter.</dd>
 
